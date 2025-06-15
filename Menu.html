@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLM House Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .heading {
+      font-family: 'Poppins', sans-serif;
+    }
+    .fade-enter {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .fade-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    .table {
+      width: 100%;
+      margin-bottom: 1rem;
+      color: #212529;
+    }
+    .table th, .table td {
+      padding: 0.75rem;
+      vertical-align: top;
+      border-top: 1px solid #2a73bc;
+    }
+    .table thead th {
+      vertical-align: bottom;
+      border-bottom: 2px solid #3c86cf;
+    }
+    .table tbody + tbody {
+      border-top: 2px solid #5299df;
+    }
+
+    .table-bordered {
+      border: 1px solid #5fa3e8;
+    }
+    .table-bordered th, .table-bordered td {
+      border: 1px solid #0979e9;
+    }
+    .table-bordered thead th {
+      border-bottom-width: 2px;
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: #303d49;
+    }
+    .table-striped tbody tr:nth-child(odd) {    
+      background-color: #f2f2f2;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .heading {
+      font-family: 'Poppins', sans-serif;
+    }
+    .fade-enter {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .fade-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .day-Monday { background-color: #fefcbf; }
+    .day-Tuesday { background-color: #c6f6d5; }
+    .day-Wednesday { background-color: #bee3f8; }
+    .day-Thursday { background-color: #fbb6ce; }
+    .day-Friday { background-color: #d6bcfa; }
+    .day-Saturday { background-color: #fbd38d; }
+    .day-Sunday { background-color: #feb2b2; }
+  </style>
+</head>
+<body class="bg-[#f7f6f2] text-gray-800">
+  <header class="bg-blue-800 text-white py-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-3xl font-bold heading flex items-center gap-2">
+        <i class="fas fa-utensils text-yellow-300"></i> SLM - House Menu
+      </h1>
+      <p class="italic text-sm">"Well planned, well fed."</p>
+    </div>
+  </header>
+
+  <nav class="bg-white sticky top-0 z-10 shadow-sm border-b">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center text-sm md:text-base font-medium">
+      <ul class="flex gap-6 text-gray-700">
+        <li><a href="#home" class="hover:text-blue-700">Home</a></li>
+        <li><a href="#timetable" class="hover:text-blue-700">Weekly Timetable</a></li>
+        <li><a href="#members" class="hover:text-blue-700">Members</a></li>
+        <li><a href="#add" class="hover:text-blue-700">Add/Edit Meal</a></li>
+        <li><a href="#dashboard" class="hover:text-blue-700">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="timetable" class="py-12 px-5 container mx-auto">
+    <h2 class="text-2xl font-bold heading mb-6 text-[#2d3748] flex items-center gap-2">
+      <i class="fas fa-calendar-alt text-blue-500"></i> Weekly Meal Timetable
+    </h2>
+    <div id="meal-grid" class="table-responsive fade-enter">
+      <table class="table table-bordered table-hover text-center bg-white rounded-lg overflow-hidden">
+        <thead class="bg-blue-100">
+          <tr>
+            <th>Day</th>
+            <th>Meal Type</th>
+            <th>Meal Name</th>
+            <th>Assigned To</th>
+            <th>Budget (Ksh)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="meal-table-body">
+          <!-- JS will inject rows here -->
+
+            <tr>
+                    <td>Monday</td>
+                    <td>Breakfast</td>
+                    <td>Omelette</td>
+                    <td>Volan</td>
+                    <td>300</td>
+                    <td>
+                    
+                    <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                    </td>
+            <tr>
+                <td>Monday</td>
+                <td>Lunch</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+                 <tr>
+                <td>Monday</td>
+                <td>Dinner</td>
+                <td>Pancakes</td>
+                <td>Achacha</td>
+                <td>100</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+                 <tr>
+                <td>Tuesday</td>
+                <td>Breakfast</td>
+                <td>Pancakes</td>
+                <td>Sam</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+                 <tr>
+                <td>Tuesday</td>
+                <td>Lunch</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+                 <tr>
+                <td>Tuesday</td>
+                <td>Dinner</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+                 <tr>
+                <td>Wednesday</td>
+                <td>Breakfast</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+                 <tr>
+                <td>Wednesday</td>
+                <td>Lunch</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+                 <tr>
+                <td>Wednesday</td>
+                <td>Dinner</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Thursday</td>
+                <td>Breakfast</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Thursday</td>
+                <td>Lunch</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Thursday</td>
+                <td>Dinner</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Friday</td>
+                <td>Breakfast</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+
+            <tr>
+                <td>Friday</td>
+                <td>Lunch</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>50</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Friday</td>
+                <td>Dinner</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Saturday</td>
+                <td>Breakfast</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Saturday</td>
+                <td>Lunch</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Saturday</td>
+                <td>Dinner</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+
+                <td>Sunday</td>
+                <td>Breakfast</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Sunday</td>
+                <td>Lunch</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            <tr>
+                <td>Sunday</td>
+                <td>Dinner</td>
+                <td>Pancakes</td>
+                <td>Bicky</td>
+                <td>500</td>
+                <td>
+                  
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="add" class="bg-[#fff7ed] py-10 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold heading mb-6 text-[#374151] flex items-center gap-2">
+        <i class="fas fa-plus-circle text-orange-500"></i> Add/Edit Meal
+      </h2>
+      <form id="mealForm" class="grid md:grid-cols-3 gap-4">
+        <select id="day" class="form-select" required>
+          <option value="">Select Day</option>
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+          <option>Friday</option>
+          <option>Saturday</option>
+          <option>Sunday</option>
+        </select>
+        <select id="mealType" class="form-select" required>
+          <option value="">Select Meal Type</option>
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+        </select>
+        <input type="text" id="mealName" class="form-control" placeholder="Meal Name" required>
+        <select id="assignedTo" class="form-select" required>
+          <option value="">Assign Member</option>
+          <option>Bicky</option>
+          <option>Volan</option>
+          <option>Sam</option>
+          <option>Achacha</option>
+          <option>Jeth</option>
+        </select>
+        <input type="number" id="budget" class="form-control" placeholder="Budget (Ksh)" min="0" required>
+        <button type="submit" class="btn btn-primary col-span-3 mt-2"><i class="fas fa-save"></i> Save Meal</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="members" class="bg-blue-50 py-10 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold heading mb-6 text-blue-700 flex items-center gap-2">
+        <i class="fas fa-users"></i> House Members
+      </h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Example Card -->
+        <div class="bg-white shadow-lg rounded-lg text-center p-4">
+          <img src="https://i.pravatawr.cc/100?u=bicky" alt="Bicky" class="w-20 h-20 rounded-full mx-auto mb-2">
+          <h3 class="font-bold text-lg">Bicky</h3>
+          <p class="text-sm text-gray-500">Chef & Manager</p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg text-center p-4">
+          <img src="https://i.pravatawr.cc/100?u=volan" alt="Volan" class="w-20 h-20 rounded-full mx-auto mb-2">
+          <h3 class="font-bold text-lg">Volan</h3>
+          <p class="text-sm text-gray-500">Cook & Organizer</p>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg text-center p-4">
+          <img src="https://i.pravatawr.cc/100?u=sam" alt="Sam" class="w-20 h-20 rounded-full mx-auto mb-2">
+          <h3 class="font-bold text-lg">Sam</h3>
+          <p class="text-sm text-gray-500">Foodie & Planner</p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg text-center p-4">
+          <img src="https://fontawesome.com/icons/circle-user?f=classic&s=solid" alt="Achacha" class="w-20 h-20 rounded-full mx-auto mb-2">
+          <h3 class="font-bold text-lg">Achacha</h3>
+          <p class="text-sm text-gray-500">Beverage Specialist</p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg text-center p-4">
+          <img src="https://i.pravatawr.cc/100?u=jeth" alt="Jeth" class="w-20 h-20 rounded-full mx-auto mb-2">
+          <h3 class="font-bold text-lg">Jeth</h3>
+          <p class="text-sm text-gray-500">Dessert Lover</p>
+        </div>
+
+        
+        <!-- Add more members similarly -->
+      </div>
+      <div class="mt-6">
+        <button class="btn btn-success"><i class="fas fa-user-plus"></i> Add Member</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard" class="py-10 px-4 container mx-auto">
+    <h2 class="text-2xl font-bold heading mb-4 text-[#1e3a8a] flex items-center gap-2">
+      <i class="fas fa-chart-line text-indigo-500"></i> Dashboard Overview
+    </h2>
+    <p class="text-sm text-gray-600">Track weekly meal distribution and roles here. (Coming Soon...)</p>
+  </section>
+
+  <footer class="bg-gray-100 py-6 mt-12 text-center text-sm text-gray-600">
+    <p>&copy; 2025 SLM House. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts to follow -->
+   
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mealForm = document.getElementById('mealForm');
+    const mealTableBody = document.getElementById('meal-table-body');
+
+    mealForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const day = document.getElementById('day').value;
+      const mealType = document.getElementById('mealType').value;
+      const mealName = document.getElementById('mealName').value;
+      const assignedTo = document.getElementById('assignedTo').value;
+      const budget = document.getElementById('budget').value;
+
+      if (day && mealType && mealName && assignedTo && budget) {
+        const newRow = `
+          <tr>
+            <td>${day}</td>
+            <td>${mealType}</td>
+            <td>${mealName}</td>
+            <td>${assignedTo}</td>
+            <td>${budget}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fas fa-trash"></i> Delete</button>
+            </td>
+          </tr>
+        `;
+        mealTableBody.insertAdjacentHTML('beforeend', newRow);
+        mealForm.reset();
+      }
+    });
+  });
+
+  function deleteRow(button) {
+    button.closest('tr').remove();
+  }
+    // Add fade-in effect for the meal grid
+    document.getElementById('meal-grid').classList.add('fade-enter-active');
+    setTimeout(() => {
+      document.getElementById('meal-grid').classList.remove('fade-enter');
+    }, 500);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+<script>
+  // Initialize tooltips for Bootstrap
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+    </script>
