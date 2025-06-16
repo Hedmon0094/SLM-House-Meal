@@ -45,13 +45,13 @@ Or double-click the file directly
 
 📝 Meals
 - Add Meal: Click the "Add Meal" button to open a modal form.
-Add Meal: Opens modal with form fields
+- Add Meal: Opens modal with form fields
 
-Edit Meal: Pre-fills form for editing
+- Edit Meal: Pre-fills form for editing
 
-Delete Meal: Confirmation via SweetAlert before deletion
+- Delete Meal: Confirmation via SweetAlert before deletion
 
-LocalStorage: Meals are stored locally (persistent across refreshes)
+- LocalStorage: Meals are stored locally (persistent across refreshes)
 
 👥 Members
 Add/Edit Members: Modal form including name, avatar (image upload), and role
@@ -63,20 +63,20 @@ Built using Chart.js
 
 Displays:
 
-Meal count per member
+- Meal count per member
 
-Budget analysis (monthly/weekly)
+- Budget analysis (monthly/weekly)
 
-Updates dynamically with user interaction
+- Updates dynamically with user interaction
 
 🛠️ Tech Stack
-Technology	Use Case
-HTML5/CSS3	UI Layout & Styling
-JavaScript	Functionality & Interactivity
-Chart.js	Data Visualization
-SweetAlert2	Stylish modal alerts
-localStorage	Persistent frontend data storage
-ARIA	Accessibility & screen reader support
+- Technology	Use Case
+- HTML5/CSS3	UI Layout & Styling
+- JavaScript	Functionality & Interactivity
+- Chart.js	Data Visualization
+- SweetAlert2	Stylish modal alerts
+- localStorage	Persistent frontend data storage
+- ARIA	Accessibility & screen reader support
 
 📌 Roadmap
  🔐 Add role-based user authentication
