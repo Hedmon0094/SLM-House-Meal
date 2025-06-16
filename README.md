@@ -1,6 +1,6 @@
 # 🍽️ SLM House Menu
 
-**SLM House Menu** is a web-based application built to help manage meals, members, and budgeting within a shared household, hostel, or small community. It includes features for adding, editing, deleting meals and member profiles, data visualization using charts, and a responsive, accessible UI.
+**SLM House Menu** is a web-based application i built  for fun to help us manage meals, members, and budgeting within a shared household. It includes features for adding, editing, deleting meals and member profiles, data visualization using charts, and a responsive, accessible UI.
 
 ---
 
@@ -17,9 +17,8 @@
 
 ## 🧱 Project Structure
 
-```bash
 slm-house-menu/
-├── Menu.html               # Main application file
+├── Menu.html   # Main application file
 ├── 
 ├── assets/
 │   └── avatar-default.png   # Default member avatar
@@ -43,7 +42,9 @@ On VS Code: Right-click index.html → Open with Live Server
 Or double-click the file directly
 
 ⚙️ Core Functionalities
+
 📝 Meals
+- Add Meal: Click the "Add Meal" button to open a modal form.
 Add Meal: Opens modal with form fields
 
 Edit Meal: Pre-fills form for editing
